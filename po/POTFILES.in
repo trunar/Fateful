@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/io.github.trunar.Fateful.desktop.in
+data/io.github.trunar.Fateful.metainfo.xml.in
+data/io.github.trunar.Fateful.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

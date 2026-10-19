@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Fateful
+Exec=fateful
+Icon=io.github.trunar.Fateful
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

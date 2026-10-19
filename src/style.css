@@ -1,0 +1,53 @@
+.dice-board {
+  min-width: 280px;
+  min-height: 280px;
+}
+
+.die-button {
+  min-width: 128px;
+  min-height: 128px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  transition: opacity 120ms ease;
+}
+
+.die-button:hover {
+  opacity: 0.88;
+}
+
+.die-button:focus-visible {
+  outline: 3px solid @accent_color;
+  outline-offset: 4px;
+}
+
+.roll-result {
+  color: #3584e4;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.history-list {
+  padding: 0;
+}
+
+.history-row {
+  min-height: 34px;
+  min-width: 330px;
+}
+
+.history-die {
+  min-width: 21px;
+  color: white;
+  font-family: "Fate Core Glyphs";
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.history-result {
+  color: @theme_fg_color;
+  font-size: 16px;
+  font-weight: 900;
+  margin-left: 0;
+}

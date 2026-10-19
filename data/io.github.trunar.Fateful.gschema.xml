@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="fateful">
+	<schema id="io.github.trunar.Fateful" path="/io/github/trunar/Fateful/">
+		<key name="dice-color" type="s">
+			<default>'system'</default>
+			<summary>Dice color</summary>
+			<description>Use the system accent color or a selected GNOME palette color.</description>
+		</key>
+		<key name="animation-speed" type="s">
+			<default>'default'</default>
+			<summary>Dice animation speed</summary>
+			<description>How long the dice roll animation lasts.</description>
+		</key>
+		<key name="animation-speed-customized" type="b">
+			<default>false</default>
+			<summary>Animation speed was chosen by the user</summary>
+		</key>
+		<key name="sound-enabled" type="b">
+			<default>true</default>
+			<summary>Dice sounds enabled</summary>
+			<description>Play dice sounds when rolling.</description>
+		</key>
+	</schema>
+</schemalist>

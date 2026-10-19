@@ -1,0 +1,55 @@
+{
+    "id" : "io.github.trunar.Fateful",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "50",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "fateful",
+    "finish-args" : [
+        "--share=network",
+        "--share=ipc",
+        "--env=GDK_DISABLE=vulkan",
+        "--socket=pulseaudio",
+        "--socket=fallback-x11",
+        "--device=dri",
+        "--socket=wayland"
+    ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+        {
+            "name" : "fateful",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "file",
+                    "path" : "meson.build"
+                },
+                {
+                    "type" : "dir",
+                    "path" : "src",
+                    "dest" : "src"
+                },
+                {
+                    "type" : "dir",
+                    "path" : "data",
+                    "dest" : "data"
+                },
+                {
+                    "type" : "dir",
+                    "path" : "po",
+                    "dest" : "po"
+                }
+            ]
+        }
+    ]
+}
