@@ -38,6 +38,8 @@ flatpak run io.github.trunar.Fateful
 
 Fateful is developed by Andrii Indyk and is licensed under the **MIT License**. See [`COPYING`](COPYING).
 
+Fateful was inspired in large part by [Fate Dice by VH-Labs](https://play.google.com/store/apps/details?id=com.rpgautomails.fatedice&hl=en-US).
+
 Dice sounds are by **Wuzzy** and are dedicated to the public domain under **CC0 1.0**. They are from [Wooden dice on wooden table roll](https://opengameart.org/content/wooden-dice-on-wodden-table-roll).
 
 The bundled **Fate Core Font** is © 2012 Evil Hat Productions, LLC, and is used with permission. Its embedded copyright notice names Fred Hicks and Jeremy Keller; the Four Actions icons were designed by Jeremy Keller. See [`FONT-COPYRIGHT.txt`](data/fonts/FONT-COPYRIGHT.txt) and [Fate's official licensing page](https://fate-srd.com/official-licensing-fate).
