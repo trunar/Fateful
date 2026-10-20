@@ -1,1 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><g color="#000" fill="#2e3436"><path d="M7.188 2.281c-.094.056-.192.125-.29.19L5.566 3.803a1.684 1.684 0 11-2.17 2.17L2.332 7.037c.506-.069 1.017-.136 1.2.026.242.214.139 1.031.155 1.656.213.088.427.171.657.219.04.008.085-.007.125 0 .337-.525.683-1.288 1-1.344.322-.057.905.562 1.406.937a3.67 3.67 0 00.656-.468c-.195-.595-.594-1.369-.437-1.657.158-.29 1.019-.37 1.625-.531.028-.183.062-.371.062-.562 0-.075-.027-.146-.031-.22-.587-.217-1.435-.385-1.562-.687-.128-.302.34-1.021.593-1.593a3.722 3.722 0 00-.593-.532zm3.875 3.25c-.165.475-.305 1.086-.47 1.563-.43.047-.84.14-1.218.312-.38-.322-.787-.773-1.156-1.093a5.562 5.562 0 00-.688.468c.177.46.453 1.001.625 1.469-.298.309-.531.67-.719 1.063-.494 0-1.102-.084-1.593-.094a5.68 5.68 0 00-.219.812c.435.24 1.006.468 1.438.72-.006.093-.032.185-.032.28 0 .333.049.66.125.97-.382.304-.898.63-1.28.937.015.044.04.083.058.127l.613.613c.417-.1.868-.223 1.266-.303.248.343.532.626.875.875-.027.135-.068.283-.104.428.174-.063.34-.155.482-.297l1.432-1.432a1.994 1.994 0 01.533-3.918c.919 0 1.684.623 1.918 1.467l1.338-1.338c.06-.06.11-.124.156-.191-.035-.062-.06-.13-.1-.188.096-.152.205-.31.315-.47.017-.348-.1-.7-.37-.971l-.177-.176c-.28.192-.561.387-.83.555-.345-.233-.746-.383-1.156-.5-.077-.507-.107-1.132-.187-1.625a5.44 5.44 0 00-.875-.063zm-9.247.608c-.087.068-.173.138-.254.205l.014.035z" style="marker:none" overflow="visible"/><path d="M8.707.293a1 1 0 00-1.415 0l-6.999 7a1 1 0 000 1.413l7 7.001a1 1 0 001.415 0l7-7a1 1 0 000-1.413zm-.708 2.121l5.587 5.587L8 13.586 2.414 7.999z" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal;marker:none" font-weight="400" font-family="sans-serif" overflow="visible"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="128" viewBox="0 0 128 128">
+  <title>template.svg</title>
+  <g id="App_Icon" data-name="App Icon" display="none">
+    <g id="baseplate" data-vc-layer="sublayer">
+      <path id="_512x512" data-name="512x512" d="M0 0 L128 0 L128 128 L0 128 Z" fill="#f0f0f0"/>
+      <path id="_512x512-2" data-name="512x512" d="M160 0 L176 0 L176 16 L160 16 Z" fill="#f0f0f0"/>
+      <text id="icon-name" transform="matrix(1 0 0 1 0 -8)" x="0" y="0" xml:space="preserve" font-family="Cantarell" font-size="4" font-weight="bold" fill="#000000"><tspan x="0" y="0">Hicolor</tspan></text>
+      <text id="icon-name-2" data-name="icon-name" transform="matrix(1 0 0 1 160 -8)" x="0" y="0" xml:space="preserve" font-family="Cantarell" font-size="4" font-weight="bold" fill="#000000"><tspan x="0" y="0">Symbolic</tspan></text>
+    </g>
+    <g id="hairlines" data-vc-layer="sublayer">
+      <path id="circle2892" d="M123.504 64 C123.504 96.863 96.863 123.504 64 123.504 C31.137 123.504 4.496 96.863 4.496 64 C4.496 31.137 31.137 4.496 64 4.496 C96.863 4.496 123.504 31.137 123.504 64 Z" fill="none" stroke="#000000" stroke-width="0.99" stroke-dasharray="0.99 0.99" opacity="0.1"/>
+      <path id="rect2894" d="M28.495 8.495 L99.505 8.495 C103.923 8.495 107.505 12.077 107.505 16.495 L107.505 111.505 C107.505 115.923 103.923 119.505 99.505 119.505 L28.495 119.505 C24.077 119.505 20.495 115.923 20.495 111.505 L20.495 16.495 C20.495 12.077 24.077 8.495 28.495 8.495 Z" fill="none" stroke="#000000" stroke-width="0.99" stroke-dasharray="0.99 0.99" opacity="0.1"/>
+      <path id="rect2896" d="M20.495 12.495 L107.505 12.495 C111.923 12.495 115.505 16.077 115.505 20.495 L115.505 107.505 C115.505 111.923 111.923 115.505 107.505 115.505 L20.495 115.505 C16.077 115.505 12.495 111.923 12.495 107.505 L12.495 20.495 C12.495 16.077 16.077 12.495 20.495 12.495 Z" fill="none" stroke="#000000" stroke-width="0.99" stroke-dasharray="0.99 0.99" opacity="0.1"/>
+      <path id="rect2898" d="M16.495 28.495 L111.505 28.495 C115.923 28.495 119.505 32.077 119.505 36.495 L119.505 107.505 C119.505 111.923 115.923 115.505 111.505 115.505 L16.495 115.505 C12.077 115.505 8.495 111.923 8.495 107.505 L8.495 36.495 C8.495 32.077 12.077 28.495 16.495 28.495 Z" fill="none" stroke="#000000" stroke-width="0.99" stroke-dasharray="0.99 0.99" opacity="0.1"/>
+      <path id="path2900" d="M0 117 L128 117" fill="none" stroke="#62a0ea" stroke-width="2"/>
+      <path id="path2900-2" data-name="path2900" d="M10.687 0 L10.687 128" fill="none" stroke="#62a0ea" stroke-width="2"/>
+      <path id="path2900-3" data-name="path2900" d="M117.313 0 L117.313 128" fill="none" stroke="#62a0ea" stroke-width="2"/>
+      <path id="path2900-4" data-name="path2900" d="M0 11 L128 11" fill="none" stroke="#62a0ea" stroke-width="2"/>
+    </g>
+  </g>
+  <g id="Die_BL" data-name="Die BL">
+    <path d="M17.687 73.5 C17.687 69.634 20.821 66.5 24.687 66.5 L54 66.5 C57.866 66.5 61 69.634 61 73.5 L61 102.813 C61 106.679 57.866 109.813 54 109.813 L24.687 109.813 C20.821 109.813 17.687 106.679 17.687 102.813 Z M27.522 69.335 C23.656 69.335 20.522 72.469 20.522 76.335 L20.522 99.978 C20.522 103.844 23.656 106.978 27.522 106.978 L51.166 106.978 C55.032 106.978 58.166 103.844 58.166 99.978 L58.166 76.335 C58.166 72.469 55.032 69.335 51.166 69.335 Z" fill="#000000"/>
+  </g>
+  <g id="Minus">
+    <path d="M24.344 35.157 L54.344 35.157 L54.344 40.157 L24.344 40.157 Z" fill="#000000"/>
+  </g>
+  <g id="Minus-2" data-name="Minus">
+    <path d="M73.656 87.157 L103.656 87.157 L103.656 92.157 L73.656 92.157 Z" fill="#000000"/>
+  </g>
+  <g id="Plus">
+    <path d="M72.679 35.349 L102.679 35.349 L102.679 40.349 L72.679 40.349 Z" fill="#000000"/>
+    <path d="M90.179 22.849 L90.179 52.849 L85.179 52.849 L85.179 22.849 Z" fill="#000000"/>
+  </g>
+</svg>
