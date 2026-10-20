@@ -28,6 +28,8 @@ import math
 import sys
 import ctypes
 import ctypes.util
+import queue
+import threading
 from pathlib import Path
 from gettext import gettext as _
 
@@ -95,7 +97,6 @@ class FatefulWindow(Adw.ApplicationWindow):
         self._roll_source = None
         self._history_animation_source = None
         self._sound_timeout_sources = []
-        self._active_sound_streams = []
         self._fate_font_available = self._register_fate_font()
         self.settings = self.get_application().settings
         package_dir = Path(__file__).resolve().parents[1]
@@ -121,6 +122,9 @@ class FatefulWindow(Adw.ApplicationWindow):
         roll_action.connect('activate', self._on_roll_action)
         self.add_action(roll_action)
         self.get_application().set_accels_for_action('win.roll', ['space'])
+        self._sound_player = DiceSoundPlayer(
+            self._sound_files,
+            muted=not self.settings.get_boolean('sound-enabled'))
 
     def _install_styles(self):
         provider = Gtk.CssProvider()
@@ -227,30 +231,14 @@ class FatefulWindow(Adw.ApplicationWindow):
     def _play_sound(self, sound_file):
         if not self.settings.get_boolean('sound-enabled'):
             return
-        try:
-            stream = Gtk.MediaFile.new_for_filename(str(sound_file))
-            stream.set_volume(0.7)
-            stream.set_muted(False)
-            stream.connect('notify::ended', self._on_sound_stream_ended)
-            stream.connect('notify::error', self._on_sound_stream_ended)
-            self._active_sound_streams.append(stream)
-            stream.play()
-        except (GLib.Error, OSError) as error:
-            print(f'Unable to play dice sound: {error}', file=sys.stderr)
-
-    def _on_sound_stream_ended(self, stream, _pspec):
-        if stream not in self._active_sound_streams:
-            return
-        if stream.get_ended() or stream.get_error():
-            self._active_sound_streams.remove(stream)
+        self._sound_player.play(sound_file)
 
     def _on_sound_toggled(self, button):
         enabled = not button.get_active()
         self.settings.set_boolean('sound-enabled', enabled)
         if not enabled:
             self._clear_sound_timeouts()
-        for stream in self._active_sound_streams:
-            stream.set_muted(not enabled)
+        self._sound_player.set_muted(not enabled)
         self._update_sound_button()
 
     def _update_sound_button(self):
@@ -429,6 +417,88 @@ class FatefulWindow(Adw.ApplicationWindow):
             return True
         except (AttributeError, OSError):
             return False
+
+
+class DiceSoundPlayer:
+    """Play and warm up sound pipelines without blocking GTK's main thread."""
+
+    def __init__(self, sound_files, muted=False):
+        self._sound_files = [str(path) for path in sound_files]
+        self._commands = queue.Queue()
+        self._muted = muted
+        self._thread = threading.Thread(
+            target=self._run, name='fateful-audio', daemon=True)
+        self._thread.start()
+
+    def play(self, sound_file):
+        self._commands.put(('play', str(sound_file)))
+
+    def set_muted(self, muted):
+        self._commands.put(('mute', muted))
+
+    def _run(self):
+        try:
+            gi.require_version('Gst', '1.0')
+            from gi.repository import Gst
+            Gst.init(None)
+        except (ImportError, ValueError) as error:
+            print(f'Unable to initialize dice audio: {error}', file=sys.stderr)
+            return
+
+        active_pipelines = []
+        message_types = Gst.MessageType.ERROR | Gst.MessageType.EOS
+
+        def start_pipeline(filename, warmup=False):
+            pipeline = Gst.ElementFactory.make('playbin', None)
+            if not pipeline:
+                print('Unable to create dice audio playback pipeline',
+                      file=sys.stderr)
+                return
+            pipeline.set_property(
+                'uri', Gio.File.new_for_path(filename).get_uri())
+            pipeline.set_property(
+                'volume', 0.0 if warmup or self._muted else 0.7)
+            result = pipeline.set_state(Gst.State.PLAYING)
+            if result == Gst.StateChangeReturn.FAILURE:
+                print(f'Unable to play dice sound: {filename}', file=sys.stderr)
+                pipeline.set_state(Gst.State.NULL)
+                return
+            active_pipelines.append((pipeline, pipeline.get_bus(), warmup))
+
+        if self._sound_files:
+            # Open the audio backend silently before the first roll needs it.
+            start_pipeline(random.choice(self._sound_files), warmup=True)
+
+        running = True
+        while running:
+            try:
+                command, value = self._commands.get(timeout=0.02)
+            except queue.Empty:
+                command, value = None, None
+
+            if command == 'play':
+                start_pipeline(value)
+            elif command == 'mute':
+                self._muted = value
+                for pipeline, _bus, warmup in active_pipelines:
+                    pipeline.set_property(
+                        'volume', 0.0 if warmup or self._muted else 0.7)
+            elif command == 'stop':
+                running = False
+
+            for entry in active_pipelines[:]:
+                pipeline, bus, warmup = entry
+                message = bus.timed_pop_filtered(0, message_types)
+                if message is None:
+                    continue
+                if message.type == Gst.MessageType.ERROR:
+                    error, _debug = message.parse_error()
+                    print(f'Dice audio playback error: {error}', file=sys.stderr)
+                pipeline.set_state(Gst.State.NULL)
+                active_pipelines.remove(entry)
+
+        for pipeline, _bus, _warmup in active_pipelines:
+            pipeline.set_state(Gst.State.NULL)
 
 
 class FateDie:
