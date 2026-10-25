@@ -46,4 +46,4 @@ The bundled **Fate Core Font** is © 2012 Evil Hat Productions, LLC, and is used
 
 ## AI assistance
 
-OpenAI Codex, using the Luna 6 model, assisted with the application implementation, user interface, documentation, and Flatpak packaging.
+OpenAI Codex assisted substantially with implementation and iteration across the user interface, dice animations, sound handling, preferences, Flatpak packaging, and documentation. The developer is responsible for the project and its releases.

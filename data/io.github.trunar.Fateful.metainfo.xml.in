@@ -7,8 +7,20 @@
   <name>Fateful</name>
   <summary>Roll four Fate dice</summary>
   <description>
-    <p>Fateful is a compact Fate dice roller for GTK 4 and libadwaita. Roll four dice, see the Fate ladder result, and review recent rolls.</p>
+    <p>Fateful is a compact desktop roller for Fate dice. Roll four dice to get a total and its descriptor on the Fate ladder, from Terrible to Legendary.</p>
+    <p>Recent rolls stay in view with the result of each die. Choose a dice color, adjust how quickly the dice roll, or mute the dice sounds in preferences.</p>
   </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/trunar/Fateful/v0.1.0/screenshots/main-window.png</image>
+      <caption>Roll four Fate dice and review recent results</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/trunar/Fateful/v0.1.0/screenshots/preferences.png</image>
+      <caption>Choose dice colors and adjust animation and sound settings</caption>
+    </screenshot>
+  </screenshots>
 
   <developer id="io.github.trunar">
     <name>Andrii Indyk</name>

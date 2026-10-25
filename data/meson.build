@@ -32,6 +32,13 @@ install_data('fonts/Fate Core Font.ttf', 'fonts/FONT-COPYRIGHT.txt',
   install_dir: get_option('prefix') / get_option('datadir') / meson.project_name() / 'fonts'
 )
 
+install_data('licenses/fate-core-font.txt',
+  install_dir: get_option('datadir') / 'licenses' / 'io.github.trunar.Fateful' / 'fate-core-font'
+)
+install_data('licenses/wuzzy-dice-sounds.txt',
+  install_dir: get_option('datadir') / 'licenses' / 'io.github.trunar.Fateful' / 'wuzzy-dice-sounds'
+)
+
 install_subdir('sounds',
   install_dir: get_option('datadir') / meson.project_name()
 )

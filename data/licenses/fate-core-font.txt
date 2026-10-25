@@ -1,0 +1,8 @@
+Fate Core Font
+
+The Fate Core font is © Evil Hat Productions, LLC and is used with
+permission. The Four Actions icons were designed by Jeremy Keller.
+
+The font's embedded copyright notice names Fred Hicks and Jeremy Keller.
+The bundled font is used under permission from Evil Hat Productions, LLC.
+See https://fate-srd.com/official-licensing-fate for the official credit.
