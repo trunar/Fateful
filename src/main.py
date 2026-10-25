@@ -88,7 +88,7 @@ class FatefulApplication(Adw.Application):
         about = Adw.AboutDialog(application_name='Fateful',
                                 application_icon='io.github.trunar.Fateful',
                                 developer_name='Andrii Indyk',
-                                version='0.1.0',
+                                version='0.1.1',
                                 license_type=Gtk.License.MIT_X11,
                                 # Translators: Replace "translator-credits" with your name/username, and optionally an email or URL.
                                 translator_credits = _('translator-credits'),
