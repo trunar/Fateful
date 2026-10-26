@@ -27,10 +27,19 @@ Fateful rolls four Fate dice, animates each die, and shows the total with its Fa
 
 ## Build and run
 
-Fateful is packaged as a Flatpak and uses the GNOME 50 runtime. Install Flatpak, Flatpak Builder, and the GNOME 50 SDK/runtime, then run these commands from the project directory:
+Fateful is packaged as a Flatpak and uses the GNOME 51 runtime. Install Flatpak, Flatpak Builder, and the GNOME 51 SDK/runtime, then run these commands from the project directory:
 
 ```sh
 flatpak-builder --user --install --force-clean .flatpak/build-dir io.github.trunar.Fateful.json
+flatpak run io.github.trunar.Fateful
+```
+
+## Install
+
+Install Flatpak and configure the Flathub remote for the GNOME runtime. Download the latest `.flatpak` bundle from [GitHub Releases](https://github.com/trunar/Fateful/releases/latest), then install and launch it:
+
+```sh
+flatpak install --user ./Fateful-<version>-x86_64.flatpak
 flatpak run io.github.trunar.Fateful
 ```
 
